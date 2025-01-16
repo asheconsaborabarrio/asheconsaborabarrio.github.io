@@ -1,14 +1,223 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Título de la página -->
+    <meta property="og:title" content="ASHE Con Sabor A Barrio" />
+
+    <!-- Descripción de la página -->
+    <meta property="og:description" content="Visita nuestra redes sociales, contactanos y no te quedes sin tu evento." />
+
+    <!-- URL de la página -->
+    <meta property="og:url" content="https://asheconsaborabarrio.github.io/" />
+
+    <!-- Tipo de contenido (generalmente 'website' para páginas web) -->
+    <meta property="og:type" content="Sitio Web" />
+
+    <!-- URL de la imagen que se compartirá -->
+    <meta property="og:image" content="https://asheconsaborabarrio.github.io/ima/ASHE1.png" />
+
+    <!-- Dimensiones de la imagen (opcional pero recomendable) -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Nombre del sitio web (opcional) -->
+    <meta property="og:site_name" content="Saocombo Latino - SL" />
+
+    <!-- Idioma de la página (opcional) -->
+    <meta property="og:locale" content="es_ES" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Edson Cuello Galván" />
+    <link rel="icon" type="image/x-icon" href="img/ASHE1.png" />
+    <title>ASHE Con Sabor A Barrio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('img/ASHE1.png') no-repeat center center fixed;
+            background-size:contain;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #fff;
+        }
+
+        .social-buttons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .social-buttons li {
+            margin: 10px 0;
+        }
+
+        .social-buttons a {
+            display: inline-block;
+            width: 400px;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .tiktok {
+            background: #000000;
+        }
+
+        .social-buttons a img {
+            width: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        /* Burbujas flotantes */
+        .floating-bubbles {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-bubbles a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .whatsapp {
+            background: url('img/WA.png') no-repeat center;
+            background-color: #25D366;
+        }
+
+        .messenger {
+            background: url('img/messenger.png') no-repeat center;
+            background-color: #0084FF;
+        }
+
+        /* Estilos Responsive */
+        @media (max-width: 768px) {
+            .content {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .social-buttons a {
+                width: 90%;
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            .social-buttons a img {
+                width: 24px;
+            }
+
+            .floating-bubbles {
+                bottom: 40px;
+                right: 30px;
+                gap: 20px;
+            }
+
+            .floating-bubbles a {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-buttons a {
+                font-size: 14px;
+                padding: 6px;
+            }
+
+            .floating-bubbles a {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hola Mundo</h1>
-    <h2>Bienvenidos a esta página, da clic en los enlaces para redireccionar a nuestras redes sociales</h2>
-    <a href="https://www.facebook.com/share/19nMwuorT3/">Facebook</a>
-    <a href="https://utnvirtualtour.netlify.app/?installed=true">Recorrido</a>
+    <div class="container">
+        <div class="content">
+            <h1>¡Síguenos en nuestras redes sociales!</h1>
+            <ul class="social-buttons">
+                <li><a href="https://www.facebook.com/share/19nMwuorT3/" class="facebook" target="_blank">
+                        <img src="img/facebook.png" alt="Facebook"> Facebook
+                    </a></li>
+                <li><a href="https://instagram.com" class="instagram" target="_blank">
+                        <img src="img/ig.png" alt="Instagram"> Instagram
+                    </a></li>
+                <li><a href="https://www.tiktok.com/@con.sabor.a.barri5?is_from_webapp=1&sender_device=pc" class="tiktok" target="_blank">
+                        <img style="width: 25px;" src="img/tt.png" alt="TikTok"> TikTok
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="floating-bubbles">
+        <a id="whatsapp-button" target="_blank" class="whatsapp"></a>
+        <a href="https://m.me/464664633408007" target="_blank" class="messenger"></a>
+    </div>
+
+    <script>
+        const whatsappNumber = "5516528246";
+    const defaultMessage = "*¡Hola!*\nMe interesa saber más acerca de los precios, podrías proporcionarme información.\nPor favor, contáctenme cuando puedan.";
+
+    // Codifica el mensaje
+    const encodedMessage = encodeURIComponent(defaultMessage);
+
+    // Genera el enlace de WhatsApp
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Función para insertar el enlace en un elemento HTML
+    function setWhatsappLink(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.href = whatsappLink;
+        }
+    }
+
+    // Llama a la función para configurar el enlace en el elemento con el ID 'whatsapp-button'
+    document.addEventListener("DOMContentLoaded", function() {
+        setWhatsappLink('whatsapp-button');
+    });
+    </script>
 </body>
+
 </html>
