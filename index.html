@@ -119,6 +119,32 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
+        .bubble-notification {
+            position: fixed;
+            bottom: 100px; /* Ajusta la distancia desde el borde inferior */
+            right: 20px;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .bubble-notification::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgba(0, 0, 0, 0.8);
+        }
 
         .whatsapp {
             background: url('img/WA.png') no-repeat center;
@@ -147,6 +173,12 @@
                 width: 24px;
             }
 
+            .bubble-notification {
+                width: 200px;
+                font-size: 12px;
+                bottom: 80px;
+            }
+            
             .floating-bubbles {
                 bottom: 40px;
                 right: 30px;
@@ -189,8 +221,8 @@
                     </a></li>
             </ul>
         </div>
-        <div>
-            <h3>Si quieres saber más acerca de los costos o para cotizar tus eventos, <br>haz clic en los botones de Whatsapp o Messenger</h3>    
+        <div class="bubble-notification">
+            <h3>Si quieres saber más acerca de los costos o para cotizar tus eventos, haz clic en los botones de Whatsapp o Messenger</h3>
         </div>
     </div>
 
