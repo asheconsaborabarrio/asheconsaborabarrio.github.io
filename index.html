@@ -121,7 +121,7 @@
 
         .bubble-notification {
             position: fixed;
-            bottom: 100px; /* Ajusta la distancia desde el borde inferior */
+            bottom: 220px; /* Ajusta la distancia desde el borde inferior */
             right: 20px;
             width: 250px;
             background: rgba(0, 0, 0, 0.8);
@@ -144,6 +144,30 @@
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
             border-top: 10px solid rgba(0, 0, 0, 0.8);
+        }
+
+        /* Botón de cierre */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: #f44336;
+            color: white;
         }
 
         .whatsapp {
@@ -221,7 +245,8 @@
                     </a></li>
             </ul>
         </div>
-        <div class="bubble-notification">
+        <div class="bubble-notification" id="notification">
+        <button class="close-btn" onclick="closeNotification()">×</button>
             <h3>Si quieres saber más acerca de los costos o para cotizar tus eventos, haz clic en los botones de Whatsapp o Messenger</h3>
         </div>
     </div>
@@ -253,6 +278,11 @@
     document.addEventListener("DOMContentLoaded", function() {
         setWhatsappLink('whatsapp-button');
     });
+
+        function closeNotification() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'none';
+        }
     </script>
 </body>
 
