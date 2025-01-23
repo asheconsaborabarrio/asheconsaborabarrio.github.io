@@ -221,6 +221,11 @@
                 width: 24px;
             }
 
+            #videos-container video {
+                width: 100%;
+                margin: 5% 0;
+            }
+
             .bubble-notification {
                 width: 200px;
                 font-size: 12px;
@@ -323,12 +328,23 @@
 
         const container = document.getElementById("videos-container");
 
-        videos.forEach(video => {
+        videos.forEach((video, index) => {
             const videoElement = document.createElement("video");
             videoElement.src = mediaFolder + video;
             videoElement.controls = true;
+
+            // Configurar el primer video para que se reproduzca automáticamente
+            if (index === 0) {
+                videoElement.autoplay = true;
+                videoElement.muted = true; // Silenciado por defecto para evitar reproducción con sonido
+                videoElement.loop = true; // Repetir en bucle
+            }
+
+            // Estilo del video
             videoElement.style.width = "48%";
             videoElement.style.margin = "1%";
+            videoElement.classList.add("responsive-video");
+
             container.appendChild(videoElement);
         });
     </script>
