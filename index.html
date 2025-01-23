@@ -250,6 +250,11 @@
                 padding: 6px;
             }
 
+            #videos-container video {
+                width: 100%;
+                margin: 5% 0;
+            }
+
             .floating-bubbles a {
                 width: 60px;
                 height: 60px;
@@ -336,7 +341,7 @@
             // Configurar el primer video para que se reproduzca automáticamente
             if (index === 0) {
                 videoElement.autoplay = true;
-                videoElement.muted = true; // Silenciado por defecto para evitar reproducción con sonido
+                videoElement.setAttribute("playsinline", ""); // Para que funcione en dispositivos móviles
                 videoElement.loop = true; // Repetir en bucle
             }
 
