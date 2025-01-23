@@ -1,11 +1,3 @@
-<?php
-// Define el directorio donde están almacenados los videos
-$mediaFolder = "media/";
-
-// Obtiene todos los archivos de video del directorio
-$videos = glob($mediaFolder . "*.mp4");
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -68,31 +60,28 @@ $videos = glob($mediaFolder . "*.mp4");
             color: #fff;
         }
 
-        .videos-section {
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
+        .videos-container {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
             text-align: center;
         }
 
-        .videos-section h2 {
+        .videos-container h2 {
+            color: #fff;
             margin-bottom: 20px;
-            font-size: 24px;
         }
 
         #videos-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
         }
 
         #videos-container video {
-            border: 2px solid white;
+            border: 2px solid #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            width: 48%;
-            margin: 1%;
         }
 
         .social-buttons {
@@ -286,22 +275,9 @@ $videos = glob($mediaFolder . "*.mp4");
         </div>
     </div>
 
-    <div id="videos-section" class="videos-section">
-        <h2>Galería de Videos</h2>
-        <div id="videos-container" class="videos-container">
-            <?php
-            // Verifica si hay videos en el directorio
-            if (!empty($videos)) {
-                foreach ($videos as $video) {
-                    // Muestra cada video encontrado
-                    echo '<video src="' . $video . '" controls></video>';
-                }
-            } else {
-                // Mensaje si no se encuentran videos
-                echo '<p>No hay videos disponibles en este momento.</p>';
-            }
-            ?>
-        </div>
+    <div class="videos-container">
+            <h2>Galería de Videos</h2>
+            <div id="videos-container"></div>
     </div>
 
     <div class="floating-bubbles">
@@ -336,6 +312,25 @@ $videos = glob($mediaFolder . "*.mp4");
             const notification = document.getElementById('notification');
             notification.style.display = 'none';
         }
+
+
+    const mediaFolder = "media/";
+
+        const videos = [
+            "video1.mp4",
+            "video2.mp4"
+        ];
+
+        const container = document.getElementById("videos-container");
+
+        videos.forEach(video => {
+            const videoElement = document.createElement("video");
+            videoElement.src = mediaFolder + video;
+            videoElement.controls = true;
+            videoElement.style.width = "48%";
+            videoElement.style.margin = "1%";
+            container.appendChild(videoElement);
+        });
     </script>
 </body>
 
