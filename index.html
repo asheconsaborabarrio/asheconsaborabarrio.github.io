@@ -287,6 +287,10 @@
         </div>
     </div>
 
+    <div id="scrollArrow" class="scroll-arrow">
+            <span>↓ Da Clíc aquí y mira nuestros videos</span>
+    </div>
+
     <div class="videos-container">
             <h2>Galería de Videos</h2>
             <div id="videos-container"></div>
@@ -347,6 +351,32 @@
             }
 
             container.appendChild(videoElement);
+        });
+
+
+        const scrollArrow = document.getElementById("scrollArrow");
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+            let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Detectar si se está desplazando hacia abajo o hacia arriba
+            if (currentScrollTop > lastScrollTop) {
+                // Si se desplaza hacia abajo, ocultamos la flecha
+                scrollArrow.style.display = "none";
+            } else {
+                // Si se desplaza hacia arriba, mostramos la flecha
+                scrollArrow.style.display = "block";
+            }
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para evitar que el valor sea negativo
+        });
+
+        scrollArrow.addEventListener("click", () => {
+            document.querySelector(".videos-container").scrollIntoView({
+                behavior: "smooth"
+            });
+
+            scrollArrow.style.display = "none";
         });
     </script>
 </body>
