@@ -82,6 +82,8 @@
         #videos-container video {
             border: 2px solid #fff;
             border-radius: 10px;
+            width: 48%;
+            margin: 5% 0;
         }
 
         .social-buttons {
@@ -343,9 +345,6 @@
                 videoElement.autoplay = true;
                 videoElement.loop = true; // Repetir en bucle
             }
-
-            videoElement.style.width = "48%";
-            videoElement.style.margin = "1%";
 
             container.appendChild(videoElement);
         });
