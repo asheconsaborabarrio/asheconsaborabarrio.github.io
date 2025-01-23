@@ -341,13 +341,12 @@
             // Configurar el primer video para que se reproduzca automáticamente
             if (index === 0) {
                 videoElement.autoplay = true;
-                videoElement.setAttribute("playsinline", ""); // Para que funcione en dispositivos móviles
                 videoElement.loop = true; // Repetir en bucle
             }
 
             // Estilo del video
-            videoElement.style.width = "48%";
-            videoElement.style.margin = "1%";
+            videoElement.style.width = "100%";
+            videoElement.style.margin = "5%";
             videoElement.classList.add("responsive-video");
 
             container.appendChild(videoElement);
