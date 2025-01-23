@@ -1,3 +1,11 @@
+<?php
+// Define el directorio donde están almacenados los videos
+$mediaFolder = "media/";
+
+// Obtiene todos los archivos de video del directorio
+$videos = glob($mediaFolder . "*.mp4");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -58,6 +66,33 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             color: #fff;
+        }
+
+        .videos-section {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+        }
+
+        .videos-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        #videos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #videos-container video {
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 48%;
+            margin: 1%;
         }
 
         .social-buttons {
@@ -248,6 +283,24 @@
         <div class="bubble-notification" id="notification">
         <button class="close-btn" onclick="closeNotification()">×</button>
             <h3>Si quieres saber más acerca de los costos o para cotizar tus eventos, haz clic en los botones de Whatsapp o Messenger</h3>
+        </div>
+    </div>
+
+    <div id="videos-section" class="videos-section">
+        <h2>Galería de Videos</h2>
+        <div id="videos-container" class="videos-container">
+            <?php
+            // Verifica si hay videos en el directorio
+            if (!empty($videos)) {
+                foreach ($videos as $video) {
+                    // Muestra cada video encontrado
+                    echo '<video src="' . $video . '" controls></video>';
+                }
+            } else {
+                // Mensaje si no se encuentran videos
+                echo '<p>No hay videos disponibles en este momento.</p>';
+            }
+            ?>
         </div>
     </div>
 
