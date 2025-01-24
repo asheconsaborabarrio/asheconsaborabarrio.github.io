@@ -34,11 +34,19 @@
     <link rel="icon" type="image/x-icon" href="img/FOTO DE PERFIL ASHE.jpg" />
     <title>ASHE Con Sabor A Barrio</title>
     <style>
+        html,
         body {
             margin: 0;
-            font-family: Arial, sans-serif; /* Color de fondo por defecto */
-            background: url('img/FOTO DE PERFIL ASHE.jpg') no-repeat center center fixed; /* Imagen de fondo */
-            background-size:cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            padding: 0;
+            background-color: #191919;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('img/FOTO DE PERFIL ASHE.jpg') no-repeat center center;
+            background-size: contain;
+            height: 100vh;
         }
 
 
@@ -228,13 +236,6 @@
 
         /* Estilos Responsive */
         @media (max-width: 768px) {
-            body {
-                margin: 0;
-                font-family: Arial, sans-serif; /* Color de fondo por defecto */
-                background: url('img/FOTO DE PERFIL ASHE.jpg') no-repeat center center fixed; /* Imagen de fondo */
-                background-size:cover; /* Ajusta la imagen para cubrir toda la pantalla */
-            }
-            
             .content {
                 width: 90%;
                 padding: 15px;
@@ -273,14 +274,7 @@
             }
         }
 
-        @media (max-width: 480px) {
-            body {
-            margin: 0;
-            font-family: Arial, sans-serif; /* Color de fondo por defecto */
-            background: url('img/FOTO DE PERFIL ASHE.jpg') no-repeat center center fixed; /* Imagen de fondo */
-            background-size:cover; /* Ajusta la imagen para cubrir toda la pantalla */
-            }
-            
+        @media (max-width: 480px) {            
             .social-buttons a {
                 font-size: 14px;
                 padding: 6px;
